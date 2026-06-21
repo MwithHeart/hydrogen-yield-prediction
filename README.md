@@ -4,8 +4,15 @@ Using real-world sensor data (like temperature, current, and voltage), this proj
 
 
 ## 📊 Project Overview
-Predicting green hydrogen yield is critical for scaling up renewable energy systems and balancing power grids. However, electrolyzers are highly dynamic systems influenced by changing weather, solar cycles, and thermal losses.
+Predicting green hydrogen yield is critical for scaling up renewable energy systems and balancing power grids. However, electrolyzers are highly dynamic systems influenced by changing weather, solar cycles, and thermal losses.  
 This project explores three different machine learning approaches to find the best way to handle these complex patterns.
+
+
+## 📂 Dataset Source  
+The data used in this project consists of real-world sensor logs capturing a continuous solar-to-hydrogen electrolysis run [10/10/2020].  
+Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
+Data Dimensions: 2,972 entries tracking laboratory conditions, reactor metrics, and electrical inputs.  
+Features Included: lab_temperature, reactor_temperature, current, voltage, power, and timestamps.
 
 ## 🛠️ The Tech Stack
 * Language: Python
@@ -53,7 +60,6 @@ Three distinct model architectures were tested to see how well they could map th
    pip install scikit-learn xgboost pandas numpy matplotlib seaborn
    
    3. Run the notebook: Open notebooks/hydrogen_prediction_pipeline.ipynb in Jupyter Notebook or VS Code and run all cells.
-
 
 
 
