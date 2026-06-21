@@ -1,2 +1,2 @@
-Hello here
-Starting out
+# Green Hydrogen Production Forecasting using Machine Learning 🚀
+This repository contains a complete machine learning project that predicts hydrogen gas production from a solar-powered electrolyzer.Using real-world sensor data (like temperature, current, and voltage), this project shows how we can transition from a simple baseline model to a state-of-the-art Gradient Boosting model (XGBoost) to achieve 93.75% prediction accuracy.
