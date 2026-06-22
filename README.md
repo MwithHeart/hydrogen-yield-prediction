@@ -7,7 +7,7 @@ Using real-world sensor data (like temperature, current, and voltage), this proj
 This project explores three machine learning approaches: Linear Regression, Random Forest, and XGBoost, to find the best way to handle the complex physical and temporal patterns. The results demonstrate that while the core process is highly linear, ensemble tree methods excel at smoothing out noise and capturing minor non-linear curves.
 
 ## 📂 Dataset Source  
-The data used in this project consists of real-world sensor logs capturing a continuous solar-to-hydrogen electrolysis run [10/10/2020].  
+The data used in this project consists of real-world sensor logs capturing a continuous solar-to-hydrogen electrolysis run on 10/10/2020.  
 Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
 Data Dimensions: 2,972 entries tracking laboratory conditions, reactor metrics, and electrical inputs.  
 Features Included: lab_temperature, reactor_temperature, current, voltage, power, and timestamps.
