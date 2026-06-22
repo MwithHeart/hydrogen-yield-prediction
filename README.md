@@ -36,17 +36,17 @@ Three distinct model architectures were tested to see how well they could map th
 ------------------------------
 ## 📁 Repository Structure
 
-├── data/
-│   └── electrolyzer_sensor_data.csv        # Raw sensor log file
-├── notebooks/
-│   └── hydrogen_prediction_pipeline.ipynb  # Clean, end-to-end Python notebook
-├── outputs/
-│   ├── electrolyzer_cleaning_comparison.png
-│   ├── linear_regression_predictions.png 
+├── data/  
+│   └── electrolyzer_sensor_data.csv        # Raw sensor log file  
+├── notebooks/  
+│   └── hydrogen_prediction_pipeline.ipynb  # Clean, end-to-end Python notebook  
+├── outputs/  
+│   ├── electrolyzer_cleaning_comparison.png   
+│   ├── linear_regression_predictions.png   
 │   ├── random_forest_regression_predictions.png   
 │   ├── xgb_regressiion_predictions.png   
-│   └── random_forest_predictions_over_time
-└── README.md                               # Project documentation (this file)
+│   └── random_forest_predictions_over_time  
+└── README.md                            # Project documentation (this file)  
 
 ------------------------------
 ## 🚀 How to Run This Project
