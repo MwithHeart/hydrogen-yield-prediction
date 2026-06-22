@@ -12,6 +12,8 @@ Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-volta
 Data Dimensions: 2,972 entries tracking laboratory conditions, reactor metrics, and electrical inputs.  
 Features Included: lab_temperature, reactor_temperature, current, voltage, power, and timestamps.
 
+![Screenshot of raw data](raw_electrolyzer_data_from_Faraday_One.png)
+
 ## 🛠️ The Tech Stack
 * Language: Python
 * Core Libraries: scikit-learn, xgboost, random forest, linear regression, pandas, numpy
@@ -46,6 +48,7 @@ Three distinct model architectures were tested to see how well they could map th
 │   ├── random_forest_regression_predictions.png   
 │   ├── xgb_regressiion_predictions.png   
 │   └── random_forest_predictions_over_time  
+├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data
 └── README.md                            # Project documentation (this file)  
 
 ------------------------------
