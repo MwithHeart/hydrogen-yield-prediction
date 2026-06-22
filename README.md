@@ -48,25 +48,25 @@ Three distinct model architectures were tested to see how well they could map th
 │   ├── random_forest_regression_predictions.png   
 │   ├── xgb_regressiion_predictions.png   
 │   └── random_forest_predictions_over_time  
-├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data
+├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data  
 └── README.md                            # Project documentation (this file)  
 
 ------------------------------
 ## 🚀 How to Run This Project
 
    1. Clone the repository:  
-   
    ```bash  
-   git clone https://github.com 
-   ```  
+   git clone https://github.com/MwithHeart/hydrogen-yield-prediction.git
+   ```
+   ```bash  
    cd hydrogen-yield-prediction
+   ```
    
-   2. Install requirements:
-    ```bash   
-    pip install scikit-learn xgboost pandas numpy matplotlib seaborn  
-    ```  
+   2. Install requirements:  
+   ```bash  
+   pip install scikit-learn xgboost pandas numpy matplotlib seaborn  
+   ```  
    
-   3. Run the notebook: Open ```notebooks/hydrogen_prediction_pipeline.ipynb``` in Jupyter Notebook or VS Code and run all cells.
-
+   3. Run the notebook: Open `notebooks/hydrogen_prediction_pipeline.ipynb` in Jupyter Notebook or VS Code and run all cells.
 
 
