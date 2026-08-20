@@ -1,13 +1,19 @@
 ## Green Hydrogen Production Forecasting using Machine Learning 🚀
 This repository contains a complete machine learning project that predicts hydrogen gas production from a solar-powered electrolyzer. 
-Using real-world sensor data (like temperature, current, and voltage), this project shows how to transition from a simple baseline model to tree-based models, achieving a peak prediction accuracy of 96.60%.
+Using real-world sensor data (like temperature, current, and voltage), this project shows how to transition from a simple baseline model to tree-based models, achieving an R² of 0.966 with a mean absolute error (MAE) of 2.71 × 10⁻⁵ g.96.60%.
 
 
 ## 📊 Project Overview
 This project explores three machine learning approaches: Linear Regression, Random Forest, and XGBoost, to find the best way to handle the complex physical and temporal patterns. The results demonstrate that while the core process is highly linear, ensemble tree methods excel at smoothing out noise and capturing minor non-linear curves.
 
+## Why This Problem?
+
+- Hydrogen production from solar-powered electrolysis depends on operating conditions.
+- The dataset contains electrical and thermal measurements, and a model can learn the relationship between these measurements and hydrogen production.
+- The goal is to investigate whether machine learning can accurately estimate hydrogen yield from readily measurable operating variables.
+
 ## 📂 Dataset Source  
-The data used in this project consists of real-world sensor logs capturing a continuous solar-to-hydrogen electrolysis run on 10/10/2020.  
+The data used in this project consists of real-world sensor logs capturing a continuous solar-run electrolysis for hydrogen production on 10/10/2020.  
 Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
 Data Dimensions: 2,972 entries tracking laboratory conditions, reactor metrics, and electrical inputs.  
 Features Included: lab_temperature, reactor_temperature, current, voltage, power, and timestamps.
@@ -16,14 +22,14 @@ Features Included: lab_temperature, reactor_temperature, current, voltage, power
 
 ## 🛠️ The Tech Stack
 * Language: Python
-* Core Libraries: scikit-learn, xgboost, random forest, linear regression, pandas, numpy
+* Core Libraries: scikit-learn, Xgboost, random forest, linear regression, pandas, Numpy
 * Visualization: matplotlib, seaborn 
 
 
 ## 📈 Model Performance & Progression
 Three distinct model architectures were tested to see how well they could map the underlying chemical and electrical patterns of the dataset.
 
-| Machine Learning Model | R² Score (Accuracy) | Mean Absolute Error (MAE) | Engineering Takeaway |
+| Machine Learning Model | R² Score | Mean Absolute Error (MAE) | Engineering Takeaway |
 |------------------------|---------------------|---------------------------|----------------------|
 | Linear Regression | **92.56%** | 4.47 × 10⁻⁵ grams | Confirms that the core electrical relationship (Faraday's Law) is incredibly strong, but misses minor non-linear curves. |
 | Random Forest (Winner) | **96.60%** | 2.71 × 10⁻⁵ grams | Achieves peak performance. The ensemble averaging approach smooths out sensor noise and solar spikes without overfitting. |
