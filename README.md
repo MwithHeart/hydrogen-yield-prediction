@@ -1,13 +1,19 @@
 ## Green Hydrogen Production Forecasting using Machine Learning 🚀
 This repository contains a complete machine learning project that predicts hydrogen gas production from a solar-powered electrolyzer. 
-Using real-world sensor data (like temperature, current, and voltage), this project shows how to transition from a simple baseline model to tree-based models, achieving an R² of 0.966 with a mean absolute error (MAE) of 2.71 × 10⁻⁵ g.96.60%.
+Using real-world sensor data (like temperature, current, and voltage), this project shows how to transition from a simple baseline model to tree-based models, achieving an R² of 0.966 with a mean absolute error (MAE) of 2.71 × 10⁻⁵ g.
 
 
 ## 📊 Project Overview
 This project explores three machine learning approaches: Linear Regression, Random Forest, and XGBoost, to find the best way to handle the complex physical and temporal patterns. The results demonstrate that while the core process is highly linear, ensemble tree methods excel at smoothing out noise and capturing minor non-linear curves.
 
-## Why This Problem?
+**Important:** The source dataset does not contain measured hydrogen-production values. The target used for modelling is  a synthetic hydrogen-yield estimate derived from Faraday's first law of electrolysis, and an assumed efficiency distribution.
 
+$$H_{2,\text{theoretical}} = \frac{ItM}{zF}$$
+
+$$H_{2,\text{actual}} = \frac{\text{efficiency}}{100} \times H_{2,\text{theoretical}}$$
+
+
+## Why This Problem?
 - Hydrogen production from solar-powered electrolysis depends on operating conditions.
 - The dataset contains electrical and thermal measurements, and a model can learn the relationship between these measurements and hydrogen production.
 - The goal is to investigate whether machine learning can accurately estimate hydrogen yield from readily measurable operating variables.
@@ -46,14 +52,14 @@ Three distinct model architectures were tested to see how well they could map th
 
 ├── data/  
 │   └── electrolyzer_sensor_data.csv        # Raw sensor log file  
-├── notebooks/  
+├── notebook/  
 │   └── hydrogen_prediction_pipeline.ipynb  # Clean, end-to-end Python notebook  
 ├── outputs/  
 │   ├── electrolyzer_cleaning_comparison.png   
 │   ├── linear_regression_predictions.png   
 │   ├── random_forest_regression_predictions.png   
-│   ├── xgb_regressiion_predictions.png   
-│   └── random_forest_predictions_over_time  
+│   ├── random_forest_predictions_over_time.png     
+│   └── xgb_regression_predictions.png
 ├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data  
 └── README.md                            # Project documentation (this file)  
 
