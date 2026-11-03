@@ -51,13 +51,11 @@ Random Forest had the lowest validation error, so it was the model evaluated on 
 ├── data/  
 │   └── electrolyzer_sensor_data.csv        # Raw sensor log file  
 ├── notebook/  
-│   └── hydrogen_prediction_pipeline.ipynb  # Clean, end-to-end Python notebook  
-├── outputs/  
-│   ├── electrolyzer_cleaning_comparison.png     
-│   ├── random_forest_predictions_over_time.png     
-│   └── xgb_regression_predictions.png
+|   ├── electrolyzer_cleaning_comparison.png 
+│   └── hydrogen_prediction_pipeline.ipynb  # Python notebook  
+├── random_forest_predictions_over_time.png     
 ├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data  
-└── README.md                            # Project documentation (this file)  
+└── README.md                            # Project readme (this file)  
 
 ------------------------------
 ## 🚀 How to run 
