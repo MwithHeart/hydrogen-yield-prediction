@@ -5,9 +5,9 @@ A small machine learning project that predicts simulated hydrogen output from so
 
 ## What this project does
 1. Cleans sensor data from a solar electrolyzer (one day of readings, 2020-10-10).
-2. Calculates **theoretical** hydrogen output with Faraday's law of electrolysis.
+2. Calculates **theoretical** hydrogen output with Faraday's law of electrolysis.  
  $$H_{2,\text{theoretical}} = \frac{ItM}{zF}$$
-4. Simulates **actual** hydrogen output by applying a random efficiency to the theoretical value.
+4. Simulates **actual** hydrogen output by applying a random efficiency to the theoretical value.  
  $$H_{2,\text{actual}} = \frac{\text{efficiency}}{100} \times H_{2,\text{theoretical}}$$
 6. Trains and compares three models using a chronological split.
 
@@ -15,9 +15,9 @@ A small machine learning project that predicts simulated hydrogen output from so
 ## 📂 Dataset   
 - Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
 - Data Dimensions: 2,972 entries tracking  lab temperature, reactor temperature, current, voltage, power, and timestamps.
+  ![Screenshot of raw data](raw_electrolyzer_data_from_Faraday_One.png)
 - After removing 30 upward current spikes, 2,942 rows remained.
 
-![Screenshot of raw data](raw_electrolyzer_data_from_Faraday_One.png)
 
 ## Tech stack
 * Language: Python
@@ -51,9 +51,9 @@ Random Forest had the lowest validation error, so it was the model evaluated on 
 ├── data/  
 │   └── electrolyzer_sensor_data.csv        # Raw sensor log file  
 ├── notebook/  
-|   ├── electrolyzer_cleaning_comparison.png 
-│   └── hydrogen_prediction_pipeline.ipynb  # Python notebook  
-├── random_forest_predictions_over_time.png     
+|   ├── electrolyzer_cleaning_comparison.png  
+│   └── hydrogen_prediction_pipeline.ipynb  # Python notebook   
+├── random_forest_predictions_over_time.png      
 ├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data  
 └── README.md                            # Project readme (this file)  
 
