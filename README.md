@@ -1,70 +1,66 @@
-## Green Hydrogen Production Forecasting using Machine Learning 🚀
-This repository contains a complete machine learning project that predicts hydrogen gas production from a solar-powered electrolyzer. 
-Using real-world sensor data (like temperature, current, and voltage), this project shows how to transition from a simple baseline model to tree-based models, achieving an R² of 0.966 with a mean absolute error (MAE) of 2.71 × 10⁻⁵ g.
+## Electrolyzer Hydrogen Output Modeling 🚀
+A small machine learning project that predicts simulated hydrogen output from solar electrolyzer sensor data.
+
+**Important:** The "actual" hydrogen output in this project is **simulated**, not measured. 
+
+## What this project does
+1. Cleans sensor data from a solar electrolyzer (one day of readings, 2020-10-10).
+2. Calculates **theoretical** hydrogen output with Faraday's law of electrolysis.
+ $$H_{2,\text{theoretical}} = \frac{ItM}{zF}$$
+4. Simulates **actual** hydrogen output by applying a random efficiency to the theoretical value.
+ $$H_{2,\text{actual}} = \frac{\text{efficiency}}{100} \times H_{2,\text{theoretical}}$$
+6. Trains and compares three models using a chronological split.
 
 
-## 📊 Project Overview
-This project explores three machine learning approaches: Linear Regression, Random Forest, and XGBoost, to find the best way to handle the complex physical and temporal patterns. The results demonstrate that while the core process is highly linear, ensemble tree methods excel at smoothing out noise and capturing minor non-linear curves.
-
-**Important:** The source dataset does not contain measured hydrogen-production values. The target used for modelling is  a synthetic hydrogen-yield estimate derived from Faraday's first law of electrolysis, and an assumed efficiency distribution.
-
-$$H_{2,\text{theoretical}} = \frac{ItM}{zF}$$
-
-$$H_{2,\text{actual}} = \frac{\text{efficiency}}{100} \times H_{2,\text{theoretical}}$$
-
-
-## Why This Problem?
-- Hydrogen production from solar-powered electrolysis depends on operating conditions.
-- The dataset contains electrical and thermal measurements, and a model can learn the relationship between these measurements and hydrogen production.
-- The goal is to investigate whether machine learning can accurately estimate hydrogen yield from readily measurable operating variables.
-
-## 📂 Dataset Source  
-The data used in this project consists of real-world sensor logs capturing a continuous solar-run electrolysis for hydrogen production on 10/10/2020.  
-Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
-Data Dimensions: 2,972 entries tracking laboratory conditions, reactor metrics, and electrical inputs.  
-Features Included: lab_temperature, reactor_temperature, current, voltage, power, and timestamps.
+## 📂 Dataset   
+- Source: [Kaggle](https://www.kaggle.com/code/faradayeffect/h2-electrolyzer-voltage-vs-current/notebook)  
+- Data Dimensions: 2,972 entries tracking  lab temperature, reactor temperature, current, voltage, power, and timestamps.
+- After removing 30 upward current spikes, 2,942 rows remained.
 
 ![Screenshot of raw data](raw_electrolyzer_data_from_Faraday_One.png)
 
-## 🛠️ The Tech Stack
+## Tech stack
 * Language: Python
 * Core Libraries: scikit-learn, Xgboost, random forest, linear regression, pandas, Numpy
-* Visualization: matplotlib, seaborn 
+* Visualization: matplotlib 
 
 
-## 📈 Model Performance & Progression
-Three distinct model architectures were tested to see how well they could map the underlying chemical and electrical patterns of the dataset.
+## 📈 Results
+| Model | MAE (g) | RMSE (g) |
+|---|---|---|
+| Linear Regression (validation) | 6.53e-5 | 9.62e-5 |
+| Random Forest (validation) | 4.28e-5 | 8.49e-5 |
+| XGBoost (validation) | 1.36e-4 | 1.80e-4 |
 
-| Machine Learning Model | R² Score | Mean Absolute Error (MAE) | Engineering Takeaway |
-|------------------------|---------------------|---------------------------|----------------------|
-| Linear Regression | **92.56%** | 4.47 × 10⁻⁵ grams | Confirms that the core electrical relationship (Faraday's Law) is incredibly strong, but misses minor non-linear curves. |
-| Random Forest (Winner) | **96.60%** | 2.71 × 10⁻⁵ grams | Achieves peak performance. The ensemble averaging approach smooths out sensor noise and solar spikes without overfitting. |
-| XGBoost | **93.13%** | 4.57 × 10⁻⁵ grams | Delivers strong accuracy, but its aggressive boosting structure slightly overfits minor noise patterns compared to Random Forest. |
+Random Forest had the lowest validation error, so it was the model evaluated on the test set.
+
+------------------------------
+## Limitations
+
+- The target is simulated. It is theoretical output multiplied by a random efficiency that is unrelated to any feature. These scores show how well the models reproduce my simulated target, **not** real electrolyzer performance.
+
+
+## Possible next steps
+
+- Model efficiency as a function of current density (for example, the Ulleberg model) instead of a random value.
 
 
 ------------------------------
-## 🧠 Key Data Engineering Insights
-   1. The Data Splitting: Because this dataset tracks a process over time, keeping the training data and testing data properly isolated was critical.  
-   2. Feature Duplication: Correlation analysis showed that current and power had a near-perfect correlation of 0.9996. This aligns with electrical physics (Power = Current × Voltage). Tree models like Random Forest and XGBoost successfully handled this collinearity without losing predictive stability.
-  
-------------------------------
-## 📁 Repository Structure
+## 📁 Repository structure
 
 ├── data/  
 │   └── electrolyzer_sensor_data.csv        # Raw sensor log file  
 ├── notebook/  
 │   └── hydrogen_prediction_pipeline.ipynb  # Clean, end-to-end Python notebook  
 ├── outputs/  
-│   ├── electrolyzer_cleaning_comparison.png   
-│   ├── linear_regression_predictions.png   
-│   ├── random_forest_regression_predictions.png   
+│   ├── electrolyzer_cleaning_comparison.png     
 │   ├── random_forest_predictions_over_time.png     
 │   └── xgb_regression_predictions.png
 ├── raw_electrolyzer_data_from_Faraday_One.png      # Screenshot of the raw data  
 └── README.md                            # Project documentation (this file)  
 
 ------------------------------
-## 🚀 How to Run This Project
+## 🚀 How to run 
 
    1. Clone the repository:  
    ```bash  
